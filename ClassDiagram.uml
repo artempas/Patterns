@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>/home/artempas/IdeaProjects/PIAPS/src</OriginalElement>
+  <nodes>
+    <node x="-325.875" y="492.0">Main</node>
+    <node x="-367.0" y="-29.0">myImage</node>
+    <node x="-524.4323308270677" y="150.0">ProxyImage</node>
+    <node x="-694.8646616541354" y="150.0">RealImage</node>
+    <node x="-306.0" y="54.0">MovableBox</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="ProxyImage" target="myImage" relationship="REALIZATION">
+      <point x="47.25" y="-41.0" />
+      <point x="-382.68233082706774" y="191.0" />
+      <point x="-316.5" y="191.0" />
+      <point x="-316.5" y="33.0" />
+      <point x="-335.25" y="33.0" />
+      <point x="-31.75" y="15.5" />
+    </edge>
+    <edge source="Main" target="MovableBox" relationship="CREATE">
+      <point x="0.0" y="-15.5" />
+      <point x="-279.875" y="466.0" />
+      <point x="-209.5" y="466.0" />
+      <point x="0.0" y="125.0" />
+    </edge>
+    <edge source="MovableBox" target="myImage" relationship="TO_ONE">
+      <point x="0.0" y="-125.0" />
+      <point x="-209.5" y="33.0" />
+      <point x="-271.75" y="33.0" />
+      <point x="31.75" y="15.5" />
+    </edge>
+    <edge source="RealImage" target="myImage" relationship="REALIZATION">
+      <point x="0.0" y="-29.0" />
+      <point x="-624.3646616541354" y="33.0" />
+      <point x="-335.25" y="33.0" />
+      <point x="-31.75" y="15.5" />
+    </edge>
+    <edge source="ProxyImage" target="RealImage" relationship="TO_ONE">
+      <point x="-47.25" y="-41.0" />
+      <point x="-477.18233082706774" y="331.0" />
+      <point x="-624.3646616541354" y="331.0" />
+      <point x="0.0" y="29.0" />
+    </edge>
+    <edge source="Main" target="ProxyImage" relationship="CREATE">
+      <point x="0.0" y="-15.5" />
+      <point x="-279.875" y="466.0" />
+      <point x="-429.93233082706774" y="466.0" />
+      <point x="0.0" y="41.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.1625874125874127" showDependencies="true" x="-280.4999999999999" y="172.79999999999998" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -5,17 +5,18 @@ import java.io.IOException;
 import static javax.imageio.ImageIO.read;
 
 public class RealImage implements myImage{
-    private final String path;
 
+    Image image;
     RealImage(String path){
-        this.path=path;
-    }
-    public Image load() {
         try {
-            return read(new File("/home/artempas/IdeaProjects/Patterns/image.jpeg"));
+            this.image=read(new File(path));
         } catch (IOException e){
             System.out.println(e);
-            return null;
         }
+    }
+
+    @Override
+    public void draw(Graphics g, int x, int y, int width, int height) {
+        g.drawImage(image, x, y, width, height, null);
     }
 }

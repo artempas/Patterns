@@ -6,15 +6,14 @@ public class MovableBox extends JPanel implements MouseListener, MouseMotionList
 
     private int x, y, width, height, dist_from_0_x, dist_from_0_y;
     private boolean isDragging;
-    private Image image;
-    private myImage proxyImage;
+    private ProxyImage image;
 
-    public MovableBox(int x, int y, int width, int height, myImage proxyImage) {
+    public MovableBox(int x, int y, int width, int height, String path) {
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
-        this.proxyImage=proxyImage;
+        this.image= new ProxyImage(path);
         addMouseListener(this);
         addMouseMotionListener(this);
     }
@@ -24,9 +23,7 @@ public class MovableBox extends JPanel implements MouseListener, MouseMotionList
         super.paintComponent(g);
         g.setColor(Color.RED);
         g.drawRect(x, y, width, height);
-        if (image != null) {
-            g.drawImage(image, x, y, width, height, null);
-        }
+        this.image.draw(g,x,y,width,height);
     }
 
     public boolean containsPoint(int x, int y) {
@@ -43,7 +40,7 @@ public class MovableBox extends JPanel implements MouseListener, MouseMotionList
 
     public void mouseClicked(MouseEvent e) {
         if (e.getClickCount() == 2 && containsPoint(e.getX(), e.getY())) {
-            image=proxyImage.load();
+            image.load();
             repaint();
         }
     }

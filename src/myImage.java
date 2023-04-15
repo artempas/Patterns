@@ -1,5 +1,6 @@
 import java.awt.*;
 
 public interface myImage {
-    Image load();
+
+    void draw(Graphics g, int x, int y, int width, int height);
 }

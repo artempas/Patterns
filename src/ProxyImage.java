@@ -1,16 +1,20 @@
 import java.awt.*;
 
 public class ProxyImage implements myImage{
-    private Image loaded=null;
-    RealImage realImage;
+    private RealImage image;
+    String path;
+
     ProxyImage(String path){
-        realImage= new RealImage(path);
+        this.path = path;
     }
 
     @Override
-    public Image load() {
-        if (loaded==null)
-            loaded = realImage.load();
-        return loaded;
+    public void draw(Graphics g, int x, int y, int width, int height) {
+        if (image!=null)
+            image.draw(g,x,y,width,height);
+    }
+
+    public void load(){
+        this.image=new RealImage(this.path);
     }
 }
